@@ -4,42 +4,194 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
-  text-align: center;
+  text-align: left;
   height: 100%;
-  padding: 10px;
-  background-color: #282c34;
-}
-
-.App-logo {
-  height: 30vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 12px;
+  background-color: #0f1115;
 }
 
 .App-header {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  font-size: 14px;
+  color: #e6e6e6;
+}
+
+/* Header Row */
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #f5faff;
+}
+
+.refresh-btn {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.refresh-btn:hover {
+  background: #1c61be;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Controls */
+.controls-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.search-input {
+  flex: 1;
+  background: #11141b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #e6eefb;
+}
+
+.search-input::placeholder {
+  color: #7a8599;
+}
+
+.sort-select {
+  background: #11141b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 6px 8px;
+  color: #e6eefb;
+}
+
+/* States */
+.state {
+  padding: 10px 0;
+  color: #aab3c0;
+}
+
+.state-error {
+  color: #ff7b7b;
+}
+
+/* Notes List */
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  overflow: auto;
+}
+
+.note-card {
+  background: #151821;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.note-actions {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 6px;
+}
+
+.icon-btn {
+  background: #1f2430;
+  color: #cfe0ff;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-btn:hover {
+  background: #243049;
+}
+
+.icon-btn.danger {
+  color: #ff9aa2;
+  border-color: rgba(255, 122, 122, 0.35);
+}
+
+.note-index {
+  font-size: 11px;
+  color: #8aa1c3;
+  background: rgba(138, 161, 195, 0.15);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+.note-title {
+  font-weight: 600;
+  color: #eaf2ff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.note-title.untitled {
+  color: #aab3c0;
+  font-weight: 500;
+}
+
+.note-body {
+  max-height: 120px;
+  overflow: hidden;
+}
+
+.note-text {
+  margin: 0;
+  color: #cfe0ff;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.note-footer {
+  margin-top: 8px;
+}
+
+.note-date {
+  font-size: 11px;
+  color: #7f8aa3;
+}
+
+.copied-pill {
+  margin-left: 8px;
+  font-size: 11px;
+  color: #b7f5c8;
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34, 197, 94, 0.28);
+  border-radius: 999px;
+  padding: 1px 8px;
 }
